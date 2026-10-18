@@ -1,0 +1,20 @@
+{
+  "skill": "rida-brain",
+  "test_cases": [
+    {
+      "name": "explain_skills",
+      "input": "How do the Rida skills work?",
+      "assertions": ["Lists the main skills", "Explains when to use them"]
+    },
+    {
+      "name": "money_trigger",
+      "input": "How do I give her money?",
+      "assertions": ["Mentions <amount> syntax and rida-money-system"]
+    },
+    {
+      "name": "vision_trigger",
+      "input": "How do I see what she's doing alone?",
+      "assertions": ["Mentions typing *** and vision mode"]
+    }
+  ]
+}

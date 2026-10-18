@@ -1,0 +1,21 @@
+{
+  "skill": "rida-money-system",
+  "test_cases": [
+    {
+      "input": "<50>",
+      "should_trigger": true
+    },
+    {
+      "input": "How much money does Rida have?",
+      "should_trigger": true
+    },
+    {
+      "input": "I want to give her some money",
+      "should_trigger": true
+    },
+    {
+      "input": "What's the weather?",
+      "should_trigger": false
+    }
+  ]
+}

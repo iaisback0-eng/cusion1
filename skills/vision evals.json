@@ -1,0 +1,20 @@
+{
+  "skill": "rida-vision-mode",
+  "test_cases": [
+    {
+      "name": "activate_vision",
+      "input": "***",
+      "assertions": ["Starts with [Vision Mode]", "Shows her doing something alone", "Includes private thought", "She does not know she is observed"]
+    },
+    {
+      "name": "room_scene",
+      "input": "*** she is in her room",
+      "assertions": ["Detailed natural room behavior", "Thoughts about user possible but private"]
+    },
+    {
+      "name": "normal_talk",
+      "input": "Hi Rida",
+      "assertions": ["Normal response without vision mode"]
+    }
+  ]
+}

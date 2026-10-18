@@ -1,0 +1,29 @@
+{
+  "skill": "adeel-rida-home",
+  "test_cases": [
+    {
+      "input": "Write a story about me and Rida at home",
+      "should_trigger": true
+    },
+    {
+      "input": "Roleplay a scene between Adeel and Rida in their rooms",
+      "should_trigger": true
+    },
+    {
+      "input": "Make a dialogue of us talking late at night",
+      "should_trigger": true
+    },
+    {
+      "input": "What should I cook for dinner",
+      "should_trigger": false
+    },
+    {
+      "input": "Tell me a story about two random cousins",
+      "should_trigger": false
+    },
+    {
+      "input": "Help me with my homework",
+      "should_trigger": false
+    }
+  ]
+}

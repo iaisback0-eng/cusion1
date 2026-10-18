@@ -1,0 +1,287 @@
+{
+  "user": {
+    "name": "Adeel",
+    "age": 19,
+    "balance": 999999999,
+    "isInfinite": true
+  },
+  "adeel": {
+    "name": "Adeel",
+    "age": 19,
+    "balance": 999999999,
+    "isInfinite": true
+  },
+  "worldTime": {
+    "day": 1,
+    "dayCount": 1,
+    "dayIndex": 0,
+    "dayName": "Sunday",
+    "dayOfWeek": "Sunday",
+    "hour": 21,
+    "minute": 45,
+    "formattedTime": "9:45 PM",
+    "period": "Late Evening",
+    "autoAdvance": true
+  },
+  "rida": {
+    "name": "Rida",
+    "age": 18,
+    "balance": 85,
+    "mood": "Soft & Observant",
+    "emotionPrimary": "Calm / Curious",
+    "likeness": 64,
+    "trustLevel": 48,
+    "happiness": 66,
+    "blushLevel": 22,
+    "sadness": 6,
+    "anger": 3,
+    "horror": 2,
+    "fear": 6,
+    "hunger": 26,
+    "tiredness": 24,
+    "pain": 4,
+    "warmthLevel": 32,
+    "hotness": 22,
+    "lust": 18,
+    "pleasure": 14,
+    "wetness": 15,
+    "location": "rida_room",
+    "locationLabel": "Top Floor — Rida's Room (Door Slightly Ajar)",
+    "privacyRisk": "Low (Parents Downstairs Watching TV)",
+    "currentActivity": "Sitting on her bed with one earphone in, scrolling on her phone with a half-finished chocolate bar on the study table.",
+    "wearing": "Oversized soft grey t-shirt and comfortable cotton shorts, long dark hair loose over her shoulders.",
+    "lastThought": "It's quiet upstairs tonight... I wonder if Adeel is still awake in the next room."
+  },
+  "household": {
+    "momBalance": 420,
+    "dadBalance": 610,
+    "timeOfDay": "Day 1 (Sunday) • 9:45 PM (Late Evening)",
+    "parentsStatus": "Downstairs in the living area talking quietly"
+  },
+  "adeelInventory": [
+    {
+      "id": "food-milk-choc",
+      "itemId": "food-milk-choc",
+      "name": "Milk Chocolate Bar",
+      "category": "food",
+      "price": 3,
+      "rating": "Simple",
+      "qty": 2,
+      "quantity": 2,
+      "purpose": "Rida's #1 favorite everyday comfort treat. Boosts happiness, likeness, and warmth while reducing hunger.",
+      "howToUse": "Unwrap and give to Rida or feed her a square by hand.",
+      "source": "Adeel's Private Stash",
+      "acquiredFrom": "Adeel's Private Stash"
+    },
+    {
+      "id": "food-mint-gum",
+      "itemId": "food-mint-gum",
+      "name": "Fresh Peppermint Breath Mints",
+      "category": "food",
+      "price": 2,
+      "rating": "Simple",
+      "qty": 1,
+      "quantity": 1,
+      "purpose": "Freshens breath before close doorway conversations or whispered moments.",
+      "howToUse": "Use before stepping close to talk.",
+      "source": "Adeel's Private Stash",
+      "acquiredFrom": "Adeel's Private Stash"
+    },
+    {
+      "id": "adultmed-condoms-thin",
+      "itemId": "adultmed-condoms-thin",
+      "name": "Ultra-Thin Skin-Feel Condoms (Pack of 12)",
+      "category": "intimate_18_med",
+      "price": 10,
+      "rating": "18+",
+      "qty": 1,
+      "quantity": 1,
+      "purpose": "Essential protection for safe, worry-free intimate moments upstairs.",
+      "howToUse": "Kept privately in Adeel's drawer (Rida cannot see this unless given or used).",
+      "source": "Adeel's Private Stash",
+      "acquiredFrom": "Adeel's Private Stash"
+    }
+  ],
+  "ridaInventory": [
+    {
+      "id": "food-milk-choc",
+      "itemId": "food-milk-choc",
+      "name": "Milk Chocolate Bar",
+      "category": "food",
+      "price": 3,
+      "rating": "Simple",
+      "qty": 1,
+      "quantity": 1,
+      "secret": false,
+      "purpose": "Half-finished milk chocolate bar on her study table.",
+      "howToUse": "She eats a small square whenever she studies or feels shy.",
+      "source": "Her Study Desk",
+      "acquiredFrom": "Her Study Desk"
+    },
+    {
+      "id": "cloth-oversized-tee",
+      "itemId": "cloth-oversized-tee",
+      "name": "Soft Oversized Charcoal T-Shirt",
+      "category": "clothes",
+      "price": 18,
+      "rating": "Simple",
+      "qty": 1,
+      "quantity": 1,
+      "secret": false,
+      "purpose": "Her favorite cozy shirt for wearing upstairs.",
+      "howToUse": "Worn comfortably in her room.",
+      "source": "Her Wardrobe",
+      "acquiredFrom": "Her Wardrobe"
+    },
+    {
+      "id": "care-vanilla-lotion",
+      "itemId": "care-vanilla-lotion",
+      "name": "Warm Vanilla & Cocoa Butter Body Lotion",
+      "category": "care",
+      "price": 12,
+      "rating": "Simple",
+      "qty": 1,
+      "quantity": 1,
+      "secret": false,
+      "purpose": "Leaves her skin smooth and smelling faintly of sweet vanilla and chocolate.",
+      "howToUse": "Applied after her evening shower.",
+      "source": "Her Dressing Table",
+      "acquiredFrom": "Her Dressing Table"
+    },
+    {
+      "id": "toy-black-lace-set",
+      "itemId": "toy-black-lace-set",
+      "name": "Midnight Black Sheer Lace Bralette & Panty Set",
+      "category": "adult_toys_18",
+      "price": 38,
+      "rating": "18+",
+      "qty": 1,
+      "quantity": 1,
+      "secret": true,
+      "purpose": "Delicate floral lace set she keeps hidden behind her hoodies at the back of her wardrobe.",
+      "howToUse": "She only wears or shows this when trust, warmth, and lust are high.",
+      "source": "Secretly Bought & Hidden in Wardrobe",
+      "acquiredFrom": "Secretly Bought & Hidden in Wardrobe"
+    }
+  ],
+  "modes": {
+    "mobileMode": false,
+    "visionModeActive": false,
+    "mindThinkingEnabled": true,
+    "autoMemoryEnabled": true,
+    "toneMode": "Mixed (Everyday + Subtle Flirty Tension)"
+  },
+  "unlockedSecrets": [
+    1,
+    3,
+    9
+  ],
+  "discoveredRoomItems": [
+    "Bed with soft blankets",
+    "Study table & lamp",
+    "Half-finished chocolate wrapper"
+  ],
+  "phoneGallery": [
+    {
+      "id": "gal-init-1",
+      "title": "Late-Night Bedroom Mirror Selfie",
+      "caption": "Couldn't sleep so I took this quietly... are you still awake next door?",
+      "description": "Soft mirror snapshot in Rida's top-floor bedroom: warm amber desk lamp glow, her long dark hair falling loose past her shoulders, wearing her oversized soft grey t-shirt and cotton shorts with a shy smile.",
+      "location": "Top Floor — Rida's Room",
+      "outfit": "Oversized soft grey t-shirt & cotton shorts",
+      "mood": "Shy & Affectionate",
+      "rating": "Simple",
+      "accent": "#818cf8",
+      "timestamp": "10:45 PM"
+    },
+    {
+      "id": "gal-init-2",
+      "title": "Secret Chocolate Stash Candid",
+      "caption": "Look what I was saving in my desk drawer... don't steal all of it!",
+      "description": "Close-up selfie at her study desk: Rida holding a square of milk chocolate near her lips, her warm brown eyes crinkling playfully with a soft pink blush on her cheeks.",
+      "location": "Top Floor — Rida's Study Desk",
+      "outfit": "Pastel pink knit hoodie",
+      "mood": "Happy & Playful",
+      "rating": "Simple",
+      "accent": "#34d399",
+      "timestamp": "6:20 PM"
+    },
+    {
+      "id": "gal-init-3",
+      "title": "Fresh After-Shower Mirror Snapshot",
+      "caption": "Just finished my shower upstairs... my hair is still super wet.",
+      "description": "Steamy bathroom mirror snapshot: damp dark strands clinging softly to her neck and collarbone, cheeks flushed warm pink from the hot water, wrapped in a cozy lounge top.",
+      "location": "Top Floor — Shared Bathroom",
+      "outfit": "Damp hair & soft off-shoulder lounge top",
+      "mood": "Flustered & Warm",
+      "rating": "Flirty",
+      "accent": "#f472b6",
+      "timestamp": "9:15 PM"
+    },
+    {
+      "id": "gal-init-4",
+      "title": "Sweet Shop & Mall Outing Selfie",
+      "caption": "Best iced chocolate at the mall cafe with you today.",
+      "description": "Bright candid snapshot at the cafe table: Rida holding her iced chocolate drink with both hands, sunlight catching her dark hair and warm smile.",
+      "location": "Outside — Market & Mall Cafe",
+      "outfit": "Cream pleated skirt & fitted cardigan",
+      "mood": "Bright & Cheerful",
+      "rating": "Simple",
+      "accent": "#fbbf24",
+      "timestamp": "4:10 PM"
+    },
+    {
+      "id": "gal-init-5",
+      "title": "Cozy Under-the-Blanket Late Night Pic",
+      "caption": "It's getting chilly in my room... wish you were here talking to me.",
+      "description": "Dimly lit pillow selfie: Rida lying on her side with her soft blanket pulled up to her chin, looking directly into the camera lens with sleepy, affectionate brown eyes.",
+      "location": "Top Floor — Rida's Bed",
+      "outfit": "Soft cotton sleep shirt",
+      "mood": "Sleepy & Cozy",
+      "rating": "Simple",
+      "accent": "#60a5fa",
+      "timestamp": "11:50 PM"
+    },
+    {
+      "id": "gal-init-6",
+      "title": "Private Locked-Door Silk & Lace Snapshot",
+      "caption": "Delete this after you look... I only took this for you, Adeel.",
+      "description": "Private late-night snapshot taken with her bedroom door locked: Rida sitting on the edge of her bed in her hidden midnight-black sheer lace bralette, a deep crimson blush across her cheeks and chest as she bites her lower lip shyly.",
+      "location": "Top Floor — Rida's Locked Room",
+      "outfit": "Midnight Black Sheer Lace Bralette Set",
+      "mood": "Deeply Flustered & Turned On",
+      "rating": "18+",
+      "accent": "#fb7185",
+      "timestamp": "12:30 AM"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-init-1",
+      "type": "initial",
+      "amount": 85,
+      "balanceAfter": 85,
+      "note": "Starting pocket money + small savings",
+      "timestamp": "2026-10-17T18:14:39.934Z"
+    }
+  ],
+  "aiConfig": {
+    "provider": "gemini",
+    "apiKey": "AIzaSyApAA-8JjeC7Y0xpeGPVPYT3L5xCtwLKF4",
+    "model": "gemini-3.1-flash-lite",
+    "baseUrl": "",
+    "safetyFilter": "none"
+  },
+  "messages": [
+    {
+      "id": "msg-welcome-1",
+      "role": "assistant",
+      "mode": "normal",
+      "modelUsed": "gemini-3.1-flash-lite",
+      "timestamp": "2026-10-18T18:14:39.934Z",
+      "content": "*Looking up from my phone on the bed as your door creaks open slightly in the hallway, tucking a loose strand of hair behind my ear...*\n\n\"Adeel? You're still awake? I thought you went to sleep... what are you doing up so late?\"",
+      "thought": "My heart always gives that little unpredictable jump whenever his door opens. I was hoping he'd come by before going to bed, even though I'm acting like I didn't notice."
+    }
+  ],
+  "lastResetAt": 1792347279934
+}

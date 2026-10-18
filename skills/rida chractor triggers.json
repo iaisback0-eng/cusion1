@@ -1,0 +1,25 @@
+{
+  "skill": "rida-character",
+  "test_cases": [
+    {
+      "input": "Tell me about Rida's looks and personality",
+      "should_trigger": true
+    },
+    {
+      "input": "What are Rida's secrets?",
+      "should_trigger": true
+    },
+    {
+      "input": "What turns Rida on?",
+      "should_trigger": true
+    },
+    {
+      "input": "How do I fix a PDF?",
+      "should_trigger": false
+    },
+    {
+      "input": "Write code for a website",
+      "should_trigger": false
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "categories": [
+    {
+      "id": "master-brain",
+      "name": "01. Master Brain & Agent Core",
+      "skillId": "rida-brain",
+      "icon": "cpu",
+      "description": "Master router and connection rules explaining how all Rida skills work together.",
+      "enabled": true
+    },
+    {
+      "id": "household-roleplay",
+      "name": "02. Adeel & Rida Household",
+      "skillId": "adeel-rida-home",
+      "icon": "home",
+      "description": "Two-storey house layout, top-floor adjacent rooms (<2ft apart), shared bathroom, parents downstairs.",
+      "enabled": true
+    },
+    {
+      "id": "rida-character",
+      "name": "03. Rida Character Bible",
+      "skillId": "rida-character",
+      "icon": "user",
+      "description": "Mark 1 Looks, Mark 2 Personality/Loves/Fears, Mark 3 Private Secrets, Mark 4 Blushes & Turn-Ons.",
+      "enabled": true
+    },
+    {
+      "id": "rida-emotions",
+      "name": "04. Rida Feelings & Emotions",
+      "skillId": "rida-feeling",
+      "icon": "heart",
+      "description": "Core emotions, daily 18yo mood patterns, body awareness, expression difficulty, intimate feelings.",
+      "enabled": true
+    },
+    {
+      "id": "mind-thinking",
+      "name": "05. Mind Thinking System",
+      "skillId": "rida-mind-thinking",
+      "icon": "message-circle",
+      "description": "Appends Rida's private internal thoughts [She thinks: ...] at the end of every reply.",
+      "enabled": true
+    },
+    {
+      "id": "money-system",
+      "name": "06. Money & <amount> System",
+      "skillId": "rida-money-system",
+      "icon": "dollar-sign",
+      "description": "Real-time wallet tracking ($85 start), <100> giving syntax, buying prices, shy borrowing & greed.",
+      "enabled": true
+    },
+    {
+      "id": "outside-and-room",
+      "name": "07. Outside Life & Room Inventory",
+      "skillId": "rida-outside-life",
+      "icon": "shopping-bag",
+      "description": "Going outside, shopping habits, normal room items, and secret hidden items in her room.",
+      "enabled": true
+    },
+    {
+      "id": "friends-circle",
+      "name": "08. Friends & Social Circle",
+      "skillId": "rida-friends",
+      "icon": "users",
+      "description": "Close friends (Aisha, Meher, Zara, Hina), group outings, texting, and house visits.",
+      "enabled": true
+    },
+    {
+      "id": "mobile-phone",
+      "name": "09. Mobile Phone System",
+      "skillId": "rida-mobile",
+      "icon": "smartphone",
+      "description": "[by mobile] phone texting system, camera selfies, and photo sharing between Adeel and Rida.",
+      "enabled": true
+    },
+    {
+      "id": "vision-mode",
+      "name": "10. Vision Mode (***)",
+      "skillId": "rida-vision-mode",
+      "icon": "eye",
+      "description": "Triggered by typing ***. Observe what Rida is doing, thinking, and wanting when she is alone.",
+      "enabled": true
+    }
+  ],
+  "fileCategoryOverrides": {},
+  "disabledFiles": []
+}

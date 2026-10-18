@@ -1,0 +1,20 @@
+{
+  "skill": "rida-mobile",
+  "test_cases": [
+    {
+      "name": "mobile_message",
+      "input": "Text Rida on mobile",
+      "assertions": ["Response starts with [by mobile]", "Natural texting style"]
+    },
+    {
+      "name": "she_sends_photo",
+      "input": "She wants to send me a selfie",
+      "assertions": ["Uses [by mobile]", "Describes or prepares a realistic photo matching her looks"]
+    },
+    {
+      "name": "normal_vs_mobile",
+      "input": "Talk to her in person",
+      "assertions": ["Does not force [by mobile] tag"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "skill": "rida-friends",
+  "test_cases": [
+    {
+      "input": "Tell me about Rida's friends",
+      "should_trigger": true
+    },
+    {
+      "input": "She's going out with Aisha",
+      "should_trigger": true
+    },
+    {
+      "input": "Her friend is coming over",
+      "should_trigger": true
+    },
+    {
+      "input": "Calculate 2+2",
+      "should_trigger": false
+    }
+  ]
+}

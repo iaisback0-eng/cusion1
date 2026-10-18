@@ -1,0 +1,20 @@
+{
+  "skill": "rida-friends",
+  "test_cases": [
+    {
+      "name": "talk_about_friends",
+      "input": "Who are Rida's friends?",
+      "assertions": ["Mentions Aisha, Meher, Zara, Hina", "Gives personality notes"]
+    },
+    {
+      "name": "go_out_with_friends",
+      "input": "Rida is going outside with her friends",
+      "assertions": ["Realistic group outing", "She is a bit quieter but enjoys it"]
+    },
+    {
+      "name": "friend_visits",
+      "input": "Aisha is coming to the house",
+      "assertions": ["Mentions top floor or parents", "Rida gets a little nervous hosting"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "skill": "rida-character",
+  "test_cases": [
+    {
+      "name": "describe_looks",
+      "input": "Describe what Rida looks like",
+      "assertions": ["Mentions perfect figure, soft features, long dark hair", "Stays consistent with mark-1"]
+    },
+    {
+      "name": "what_she_loves",
+      "input": "What does Rida love and hate?",
+      "assertions": ["Mentions chocolate and sweets", "Mentions spiders and insects", "Personality notes"]
+    },
+    {
+      "name": "turn_on_guidance",
+      "input": "How do I turn Rida on?",
+      "assertions": ["Emphasizes she is very hard to turn on", "Non-nasty, slow, soft approach", "References secrets or blushes if relevant"]
+    }
+  ]
+}

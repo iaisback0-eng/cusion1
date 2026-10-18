@@ -1,0 +1,21 @@
+{
+  "skill": "rida-mobile",
+  "test_cases": [
+    {
+      "input": "[by mobile] Hi",
+      "should_trigger": true
+    },
+    {
+      "input": "Text her on phone",
+      "should_trigger": true
+    },
+    {
+      "input": "Send me a photo",
+      "should_trigger": true
+    },
+    {
+      "input": "What's for dinner?",
+      "should_trigger": false
+    }
+  ]
+}

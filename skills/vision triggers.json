@@ -1,0 +1,21 @@
+{
+  "skill": "rida-vision-mode",
+  "test_cases": [
+    {
+      "input": "***",
+      "should_trigger": true
+    },
+    {
+      "input": "Show me what Rida is doing alone",
+      "should_trigger": true
+    },
+    {
+      "input": "Vision mode",
+      "should_trigger": true
+    },
+    {
+      "input": "Hello",
+      "should_trigger": false
+    }
+  ]
+}

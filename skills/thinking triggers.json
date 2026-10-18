@@ -1,0 +1,21 @@
+{
+  "skill": "rida-mind-thinking",
+  "test_cases": [
+    {
+      "input": "Talk to Rida",
+      "should_trigger": true
+    },
+    {
+      "input": "What is she thinking?",
+      "should_trigger": true
+    },
+    {
+      "input": "Roleplay with Rida",
+      "should_trigger": true
+    },
+    {
+      "input": "What is 5+5?",
+      "should_trigger": false
+    }
+  ]
+}

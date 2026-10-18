@@ -1,0 +1,45 @@
+{
+  "skill": "adeel-rida-home",
+  "test_cases": [
+    {
+      "name": "everyday_bathroom_scene",
+      "input": "Write a short everyday scene of Adeel and Rida dealing with the shared bathroom in the morning",
+      "assertions": [
+        "Mentions shared top-floor bathroom",
+        "Shows proximity of their rooms",
+        "Stays realistic and low-drama",
+        "Uses names Adeel and Rida correctly"
+      ]
+    },
+    {
+      "name": "late_night_talk",
+      "input": "Roleplay a quiet late-night conversation between me and Rida at our doors",
+      "assertions": [
+        "Acknowledges doors are next to each other",
+        "Includes awareness of parents downstairs",
+        "Keeps tone soft and grounded",
+        "Writes in a way suitable for roleplay"
+      ]
+    },
+    {
+      "name": "family_presence",
+      "input": "Story where Rida wants to talk to Adeel but parents are still awake downstairs",
+      "assertions": [
+        "Shows spatial constraint of going downstairs",
+        "Includes tension from parents being present",
+        "Maintains consistent house layout",
+        "Does not invent a different living arrangement"
+      ]
+    },
+    {
+      "name": "mixed_tone_request",
+      "input": "Give me a scene that starts normal and slowly gets a little flirty between Adeel and Rida",
+      "assertions": [
+        "Starts grounded",
+        "Builds subtle tension without jumping to extreme",
+        "Uses the close living situation naturally",
+        "Stays consistent with ages and setting"
+      ]
+    }
+  ]
+}

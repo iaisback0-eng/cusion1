@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en" class="amoled-pro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rida — Roleplay &amp; Skill Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=11" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ==================== LEFT NAVIGATION SIDEBAR ==================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-header">
+        <div class="avatar-wrap">
+          <div class="avatar-circle">R</div>
+          <span class="online-indicator" title="Active on Top Floor"></span>
+        </div>
+        <div class="brand-info">
+          <div class="brand-name-row">
+            <h1>Rida</h1>
+            <span class="tag-badge">18F • Cousin</span>
+          </div>
+          <p id="sidebarLocationText">Top Floor • Next Door</p>
+        </div>
+      </div>
+
+      <!-- Compact Live Metrics Bar -->
+      <div class="sidebar-metrics">
+        <div class="metric-col">
+          <span class="metric-label">Rida Cash</span>
+          <strong class="metric-val emerald" id="sidebarBalance">$85</strong>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-col">
+          <span class="metric-label">Likeness</span>
+          <strong class="metric-val indigo" id="sidebarBlush">62%</strong>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-col">
+          <span class="metric-label">Lust/Wet</span>
+          <strong class="metric-val silver" id="sidebarTrust">12%</strong>
+        </div>
+      </div>
+
+      <!-- Primary Navigation (SVG Icons Only) -->
+      <nav class="side-nav">
+        <div class="nav-section-label">WORKSPACE</div>
+        <button class="nav-item active" data-view="chat">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="nav-text">Roleplay Studio</span>
+          <span class="nav-pill live">Live</span>
+        </button>
+        <button class="nav-item" id="navOpenShopDrawerBtn" data-view="chat">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="nav-text">Live Store &amp; Bags</span>
+          <span class="nav-pill" id="navStoreCount">135</span>
+        </button>
+        <button class="nav-item" id="navOpenPhoneBtn" data-view="chat">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span class="nav-text">My Mobile &amp; Cinema</span>
+          <span class="nav-pill live" id="navPhoneBadge">28 Movies</span>
+        </button>
+        <button class="nav-item" data-view="memories">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 3.5 2.5 6.5 6 7.5V22h4v-4.5c3.5-1 6-4 6-7.5a8 8 0 0 0-8-8z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+          <span class="nav-text">Memory Vault</span>
+          <span class="nav-pill" id="navMemoryCount">4</span>
+        </button>
+        <button class="nav-item" data-view="skills">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span class="nav-text">Skills &amp; Files</span>
+          <span class="nav-pill" id="navSkillCount">65</span>
+        </button>
+        <button class="nav-item" data-view="world">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="nav-text">Character &amp; House</span>
+        </button>
+        <button class="nav-item" data-view="settings">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span class="nav-text">AI &amp; Brain Config</span>
+        </button>
+      </nav>
+
+      <!-- Active AI & Skill Engine Card -->
+      <div class="engine-status-card">
+        <div class="engine-status-top">
+          <span class="status-led"></span>
+          <span class="engine-title" id="sidebarModelLabel">Gemini 2.5 Flash</span>
+        </div>
+        <p class="engine-sub" id="sidebarEngineSummary">10 Folders • 65 Skill Files Mounted</p>
+        <div class="db-sync-pill" id="sidebarDbStatus" title="Click to open DB Storage, Download & Import/Export Center">
+          <svg class="icon-xs" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <span id="sidebarDbStatusText">DB Auto-Saved (Tab + Disk)</span>
+        </div>
+        <div class="engine-quick-btns">
+          <button class="QuickModeBtn" id="quickToggleMobile" title="Open My Mobile Phone Popup (Messages, Gallery & Watch Movies)">
+            <svg class="icon-xs" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Open Mobile</span>
+          </button>
+          <button class="QuickModeBtn" id="quickTriggerVision" title="Send *** to observe Rida alone in Vision Mode">
+            <svg class="icon-xs" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>Vision ***</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- User Profile Footer -->
+      <div class="sidebar-footer">
+        <div class="user-profile-row">
+          <div class="user-badge">A</div>
+          <div class="user-details">
+            <strong>Adeel (19M) • <span class="emerald-text" id="sidebarAdeelBalance">$∞ Infinite</span></strong>
+            <span id="sidebarAdeelBagCount">Private Bag: 3 items (Hidden from Rida)</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN WORKSPACE AREA ==================== -->
+    <main class="main-stage">
+      <!-- ==================== VIEW 1: ROLEPLAY CHAT STUDIO ==================== -->
+      <section class="view-section active" id="view-chat">
+        <div class="chat-studio-grid">
+          <!-- Center Chat Column -->
+          <div class="chat-center-col">
+            <!-- Sleek Header -->
+            <header class="studio-header">
+              <div class="studio-header-left">
+                <button class="icon-btn mobile-only" id="mobileMenuBtn" title="Menu">
+                  <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <div class="scene-breadcrumb">
+                  <div class="scene-title-row">
+                    <h2>Rida</h2>
+                    <span class="status-chip" id="headerMoodPill">Soft &amp; Observant</span>
+                    <span class="status-chip indigo hidden" id="headerMobileBadge">[by mobile] Active</span>
+                  </div>
+                  <div class="scene-meta-row">
+                    <span class="meta-item">
+                      <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span id="headerLocationLabel">Top Floor — Rida's Room</span>
+                    </span>
+                    <span class="dot-sep">•</span>
+                    <span class="meta-item" id="headerPrivacyLabel">Low Risk (Parents Downstairs)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="studio-header-right">
+                <button class="btn-outline btn-sm phone-header-btn" id="btnOpenMobilePopup" title="Open My Mobile Phone (Rida's Messages, Photo Gallery & Watch Movies Together)">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  <span>My Mobile</span>
+                </button>
+                <button class="btn-outline btn-sm shop-toggle-btn" id="btnToggleShopDrawer" title="Open In-Chat Shop & Dual Inventories (135 Items)">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <span id="headerShopBtnLabel">Shop &amp; Bags (135)</span>
+                </button>
+                <button class="btn-outline btn-sm" id="btnOpenGiveMoney" title="Send money to Rida via <amount>">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>Give Cash</span>
+                </button>
+                <button class="btn-outline btn-sm" id="btnOpenBackupCenter" title="DB Storage, Download Chats, Export & Import Backup">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Backup</span>
+                </button>
+                <button class="btn-outline btn-sm" id="btnResetChat" title="Reset scene (current chat is backed up first)">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                  <span>Reset</span>
+                </button>
+                <button class="btn-outline btn-sm reset-all-btn" id="btnResetAll" title="Full Reset (Clears all chats, 16 emotion levels & memories — keeps your added store items)">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Reset All</span>
+                </button>
+                <button class="btn-outline btn-sm" id="btnToggleHud" title="Toggle Right Inspector">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                  <span>Inspector</span>
+                </button>
+              </div>
+            </header>
+
+            <!-- Live Time & Days System Bar + Semantic Word Color Bar -->
+            <div class="time-and-color-strip">
+              <div class="world-time-bar">
+                <div class="time-badge-group" id="btnOpenTimeModal" title="Click to set exact Time & Day">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <strong id="headerDayText">Day 1 (Monday)</strong>
+                  <span class="dot-sep">•</span>
+                  <strong class="emerald-text" id="headerClockText">9:30 PM</strong>
+                  <span class="time-period-pill" id="headerPeriodText">Night</span>
+                </div>
+                <div class="time-skip-btns">
+                  <button class="time-chip" data-advance-mins="15" title="Advance 15 Minutes">+15m</button>
+                  <button class="time-chip" data-advance-mins="60" title="Advance 1 Hour">+1h</button>
+                  <button class="time-chip" data-advance-mins="180" title="Advance 3 Hours">+3h</button>
+                  <button class="time-chip" data-jump-period="midnight" title="Skip to Late Night / Midnight">Midnight</button>
+                  <button class="time-chip" data-jump-period="morning" title="Skip to Next Morning">Morning</button>
+                  <button class="time-chip" data-advance-mins="1440" title="Skip +1 Full Day">+1 Day</button>
+                  <button class="time-chip" data-advance-mins="10080" title="Skip +7 Days">+7 Days</button>
+                  <button class="time-chip edit-time-chip" id="btnCustomTimeOpen" title="Set Custom Day & Time">
+                    <svg class="icon-xs" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <span>Set Time</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="semantic-color-bar">
+                <div class="color-legend-items">
+                  <span class="legend-title">Colors:</span>
+                  <span class="legend-chip w-cute">Cute</span>
+                  <span class="legend-chip w-intimate">18+ / Blush / Dirty</span>
+                  <span class="legend-chip w-happy">Happy</span>
+                  <span class="legend-chip w-sad">Sad / Shy</span>
+                  <span class="legend-chip w-bad">Scared / Pain</span>
+                  <span class="legend-chip w-money">Cash $</span>
+                </div>
+                <div class="color-bar-right">
+                  <label class="color-toggle-lbl" title="Auto-advance time +10m per message">
+                    <input type="checkbox" id="chkAutoTime" checked />
+                    <span>Auto-Time</span>
+                  </label>
+                  <label class="color-toggle-lbl" title="Toggle selective word coloring in chat">
+                    <input type="checkbox" id="chkSemanticColoring" checked />
+                    <span>Color Text</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- ==================== IN-CHAT SHOPPING, 106+ STORE & DUAL INVENTORY SECTION ==================== -->
+            <div class="inchat-shop-drawer hidden" id="chatShopDrawer">
+              <div class="shop-drawer-header">
+                <div class="shop-drawer-title">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <div>
+                    <h3>Interactive Market, Pharmacy &amp; 18+ Store + Dual Inventories</h3>
+                    <p>Hover any item to see its <strong>Purpose</strong>, <strong>How to Use</strong>, and <strong>Live Feeling Effects</strong>. Rida cannot see your private inventory until you give or use an item.</p>
+                  </div>
+                </div>
+                <div class="shop-drawer-wallets">
+                  <div class="wallet-pill">
+                    <span>Your Wallet:</span>
+                    <strong class="emerald-text" id="shopAdeelBalance">$∞ Infinite</strong>
+                    <span class="infinite-badge" style="font-size:10px;padding:2px 7px;border-radius:999px;background:rgba(52,211,153,0.18);border:1px solid #34d399;color:#a7f3d0;font-weight:700;">UNLIMITED</span>
+                  </div>
+                  <div class="wallet-pill">
+                    <span>Rida's Wallet:</span>
+                    <strong class="emerald-text" id="shopRidaBalance">$85</strong>
+                  </div>
+                  <button class="btn-white btn-xs" id="btnOpenAddStoreItem">
+                    <svg class="icon-xs" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span>+ Add New Item</span>
+                  </button>
+                  <button class="icon-btn" id="btnCloseShopDrawer" title="Close Store Drawer">✕</button>
+                </div>
+              </div>
+
+              <!-- Store Mode Switcher: Browse Store vs My Private Inventory vs Rida's Inventory -->
+              <div class="shop-drawer-toolbar">
+                <div class="shop-mode-tabs">
+                  <button class="shop-mode-tab active" data-smode="catalog">Store Catalog (<span id="shopCatalogCount">106</span>)</button>
+                  <button class="shop-mode-tab" data-smode="adeel_inv">My Private Inventory (<span id="shopAdeelInvCount">3</span>) • <em>Hidden from Rida</em></button>
+                  <button class="shop-mode-tab" data-smode="rida_inv">Rida's Inventory (<span id="shopRidaInvCount">4</span>)</button>
+                </div>
+
+                <div class="shop-filters-row" id="shopCatalogFiltersRow">
+                  <div class="pill-tabs" id="shopCategoryTabs">
+                    <button class="pill-tab active" data-scat="all">All</button>
+                    <button class="pill-tab" data-scat="food">Food &amp; Chocolates</button>
+                    <button class="pill-tab" data-scat="clothes">Clothes &amp; Sleepwear</button>
+                    <button class="pill-tab" data-scat="medicine">Medicines</button>
+                    <button class="pill-tab" data-scat="care">Skincare &amp; Care</button>
+                    <button class="pill-tab rating-18-tab" data-scat="intimate_18_med">18+ Condoms &amp; Drugs</button>
+                    <button class="pill-tab rating-18-tab" data-scat="adult_toys_18">18+ Toys &amp; Lingerie</button>
+                  </div>
+                  <div class="shop-search-right">
+                    <select id="shopRatingFilter" class="clean-select">
+                      <option value="all">All Ratings (Simple + 18+)</option>
+                      <option value="Simple">Simple Only</option>
+                      <option value="18+">18+ Only</option>
+                    </select>
+                    <div class="search-input-wrap compact">
+                      <svg class="icon-xs" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      <input type="text" id="shopSearchInput" placeholder="Search 106+ items..." />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Store Items Grid / Inventory Views -->
+              <div class="shop-drawer-body">
+                <div class="shop-catalog-grid" id="inChatStoreGrid"></div>
+                <div class="shop-inv-grid hidden" id="inChatAdeelInvGrid"></div>
+                <div class="shop-inv-grid hidden" id="inChatRidaInvGrid"></div>
+              </div>
+            </div>
+
+            <!-- Conversation Feed -->
+            <div class="chat-stream" id="chatMessages">
+              <!-- Populated by JS -->
+            </div>
+
+            <!-- Composer Area -->
+            <div class="composer-container">
+              <!-- Scenario Quick Triggers Bar -->
+              <div class="scenario-pills-bar">
+                <button class="scenario-pill" data-quick="***">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span>Vision <code>***</code></span>
+                </button>
+                <button class="scenario-pill" data-quick="<50>">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>Give <code>&lt;50&gt;</code></span>
+                </button>
+                <button class="scenario-pill" data-quick="<100>">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>Give <code>&lt;100&gt;</code></span>
+                </button>
+                <button class="scenario-pill" id="btnQuickGoShopping">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <span>Go Shopping Together</span>
+                </button>
+                <button class="scenario-pill" data-quick="Rida, pick anything you want from the store—you can even buy something secretly if you're shy.">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>Let Rida Secret-Buy</span>
+                </button>
+                <button class="scenario-pill" data-quick="[by mobile] Hey Rida, are you awake? Send me a quick photo of what you're doing right now">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  <span>Request Selfie</span>
+                </button>
+                <button class="scenario-pill" data-quick="*I step closer to your doorway in the dim hallway, looking into your eyes and keeping my voice low so parents downstairs don't hear.* You look really pretty tonight, Rida.">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  <span>Doorway Flirt</span>
+                </button>
+              </div>
+
+              <!-- Unified Floating Composer Box -->
+              <form class="composer-box" id="chatForm">
+                <textarea
+                  id="chatInput"
+                  rows="2"
+                  placeholder="Message Rida, write *actions*, type <100> to give cash, or type *** for Vision Mode..."
+                ></textarea>
+                <div class="composer-toolbar">
+                  <div class="composer-tools-left">
+                    <label class="tool-toggle" id="lblMobileToggle" title="Prefix message with [by mobile]">
+                      <input type="checkbox" id="chkMobileMode" />
+                      <svg class="icon-xs" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                      <span>[by mobile]</span>
+                    </label>
+
+                    <div class="location-picker-wrap">
+                      <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <select id="selectSceneLocation" class="clean-select">
+                        <option value="rida_room">Top Floor — Rida's Room</option>
+                        <option value="hallway">Top Floor — Hallway / Doorways (&lt;2ft)</option>
+                        <option value="adeel_room">Top Floor — Adeel's Room</option>
+                        <option value="shared_bathroom">Top Floor — Shared Bathroom</option>
+                        <option value="kitchen">Ground Floor — Kitchen (Parents Nearby)</option>
+                        <option value="outside_market">Outside — Market, Pharmacy &amp; Mall</option>
+                        <option value="with_friends">Outside — With Friends (Aisha &amp; Group)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="composer-tools-right">
+                    <span class="syntax-hint"><code>&lt;100&gt;</code> Cash • <code>***</code> Vision</span>
+                    <button type="submit" class="btn-send" id="btnSendMessage">
+                      <span id="sendBtnText">Send</span>
+                      <svg class="icon-xs" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Inspector Panel (4 Clean Tabs: 16 Live Bars, Dual Bags, Skills, Memories) -->
+          <aside class="inspector-panel" id="chatHudCol">
+            <div class="inspector-tabs">
+              <button class="insp-tab active" data-itab="state">16 Live Bars</button>
+              <button class="insp-tab" data-itab="inventory">Bags (<span id="hudTotalInvBadge">7</span>)</button>
+              <button class="insp-tab" data-itab="skills">Skills</button>
+              <button class="insp-tab" data-itab="memories">Memories</button>
+            </div>
+
+            <!-- Inspector Tab 1: 16 Realistic Feeling, Emotion, Physical & Intimate Bars -->
+            <div class="insp-pane active" id="itab-state">
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>PERSONA &amp; LIVE THOUGHT</span>
+                  <span class="mono-tag" id="hudPrimaryEmotionBadge">Calm</span>
+                </div>
+                <div class="kv-stack">
+                  <div class="kv-block">
+                    <label>Current Mood &amp; Wearing</label>
+                    <p id="hudMoodText">Soft &amp; Observant</p>
+                    <small class="text-secondary" id="hudWearingText">Oversized soft grey t-shirt and cotton shorts</small>
+                  </div>
+                  <div class="kv-block">
+                    <label>Latest Internal Thought</label>
+                    <p class="mono-thought" id="hudLastThought">[She thinks: It's quiet upstairs tonight...]</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Emotion State Switcher & Active Voice Mode -->
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>EMOTION VOICE &amp; QUICK PRESETS</span>
+                  <span class="mono-tag" id="hudVoiceToneTag">Emotion-Synced</span>
+                </div>
+                <p class="insp-desc">Rida's chat tone adapts automatically to her 16 bars, or click a state below to shift her feelings immediately:</p>
+                <div class="emotion-preset-grid" id="hudEmotionPresetGrid">
+                  <button type="button" class="emotion-preset-chip" data-preset="happy" data-tone="happy">Happy</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="angry" data-tone="angry">Angry</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="sad" data-tone="sad">Sad</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="scared" data-tone="fear">Scared</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="pain" data-tone="pain">In Pain</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="hungry" data-tone="hungry">Hungry</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="sleepy" data-tone="sleepy">Sleepy</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="blushing" data-tone="flustered">Blushing</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="passionate" data-tone="passionate">18+ Desire</button>
+                  <button type="button" class="emotion-preset-chip" data-preset="calm" data-tone="calm">Calm Reset</button>
+                  <button type="button" class="emotion-preset-chip danger-chip" id="btnInspResetAll" style="border-color: rgba(239, 68, 68, 0.45); color: #f87171;">Full Reset All</button>
+                </div>
+              </div>
+
+              <!-- 16 Dynamic Bars Container (Rendered & Updated by JS) -->
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>16 LIVE EMOTION &amp; INTIMATE BARS</span>
+                  <span class="mono-tag">Auto-Reactive</span>
+                </div>
+                <div id="hudAll16BarsContainer" class="bars-16-container">
+                  <!-- Populated dynamically with all 16 bars -->
+                </div>
+              </div>
+
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>WALLETS &amp; &lt;AMOUNT&gt; TRANSFER</span>
+                  <strong class="emerald-text" id="hudWalletBadge">$85.00</strong>
+                </div>
+                <p class="insp-desc">Quick transfer cash to Rida in real time:</p>
+                <div class="cash-grid-4">
+                  <button class="cash-chip" data-give="20">+$20</button>
+                  <button class="cash-chip" data-give="50">+$50</button>
+                  <button class="cash-chip" data-give="100">+$100</button>
+                  <button class="cash-chip" data-give="250">+$250</button>
+                </div>
+                <div class="mini-ledger" id="hudRecentTx"></div>
+              </div>
+            </div>
+
+            <!-- Inspector Tab 2: Dual Inventories (My Private Bag + Rida's Bag) -->
+            <div class="insp-pane" id="itab-inventory">
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>MY PRIVATE INVENTORY (ADEEL)</span>
+                  <span class="mono-tag emerald-text" id="hudAdeelBalTag">$500</span>
+                </div>
+                <p class="insp-desc"><strong>Strict Privacy:</strong> Rida cannot see your inventory until you click <em>Give to Rida</em> or <em>Use</em>.</p>
+                <div class="trace-stack" id="hudAdeelInventoryList"></div>
+              </div>
+
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>RIDA'S INVENTORY (HER ROOM &amp; BAG)</span>
+                  <span class="mono-tag" id="hudRidaInvCountTag">4 Items</span>
+                </div>
+                <p class="insp-desc">Items Rida owns, received from you, or secretly bought at the store:</p>
+                <div class="trace-stack" id="hudRidaInventoryList"></div>
+              </div>
+
+              <div class="insp-section">
+                <button class="btn-white full-width-btn" id="btnHudOpenFullStore">
+                  <svg class="icon-xs" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <span>Open 106+ Store &amp; Add Items</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Inspector Tab 3: Live Skill Tool Trace -->
+            <div class="insp-pane" id="itab-skills">
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>SKILLS READ ON LAST TURN</span>
+                  <button class="text-link" id="btnViewAllSkillsFromHud">Open Studio →</button>
+                </div>
+                <p class="insp-desc">Click any skill file below to view or edit its rules in the Skills Studio:</p>
+                <div class="trace-stack" id="hudSkillTraceList"></div>
+              </div>
+            </div>
+
+            <!-- Inspector Tab 4: Active Memories -->
+            <div class="insp-pane" id="itab-memories">
+              <div class="insp-section">
+                <div class="insp-section-header">
+                  <span>ACTIVE BRAIN MEMORIES</span>
+                  <button class="text-link" id="btnViewMemoriesFromHud">Full Vault →</button>
+                </div>
+                <div class="trace-stack" id="hudMemoriesList"></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 2: MEMORY VAULT ==================== -->
+      <section class="view-section" id="view-memories">
+        <div class="page-wrap">
+          <header class="page-top">
+            <div>
+              <span class="section-eyebrow">PERSISTENT EPISODIC &amp; STATE MEMORY</span>
+              <h2>Rida's Memory Vault</h2>
+              <p>Every conversation, gift, purchase, and shared moment is stored here and automatically injected into Rida's context window.</p>
+            </div>
+            <button class="btn-white" id="btnNewMemory">
+              <svg class="icon-xs" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Add Memory</span>
+            </button>
+          </header>
+
+          <div class="metrics-row-4">
+            <div class="metric-box">
+              <span>Total Saved Memories</span>
+              <strong id="memStatTotal">0</strong>
+              <small>Injected into roleplay prompt</small>
+            </div>
+            <div class="metric-box">
+              <span>Pinned Core Memories</span>
+              <strong id="memStatPinned">0</strong>
+              <small>Highest priority recall</small>
+            </div>
+            <div class="metric-box">
+              <span>Remembered Wallet Balance</span>
+              <strong class="emerald-text" id="memStatBalance">$85</strong>
+              <small>Synced with rida-money-system</small>
+            </div>
+            <div class="metric-box">
+              <span>Emotional &amp; Secret Milestones</span>
+              <strong id="memStatEmotional">0</strong>
+              <small>Relationship progression</small>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="pill-tabs" id="memoryCategoryTabs">
+              <button class="pill-tab active" data-cat="all">All</button>
+              <button class="pill-tab" data-cat="pinned">Pinned</button>
+              <button class="pill-tab" data-cat="shared_moment">Shared Moments</button>
+              <button class="pill-tab" data-cat="money_gift">Money &amp; Gifts</button>
+              <button class="pill-tab" data-cat="emotional">Emotional &amp; Blushes</button>
+              <button class="pill-tab" data-cat="secret_unlocked">Secrets</button>
+              <button class="pill-tab" data-cat="outside_shopping">Outside &amp; Shopping</button>
+              <button class="pill-tab" data-cat="friends">Friends</button>
+              <button class="pill-tab" data-cat="core_fact">Core Facts</button>
+            </div>
+            <div class="search-input-wrap">
+              <svg class="icon-xs" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="memorySearchInput" placeholder="Search memories..." />
+            </div>
+          </div>
+
+          <div class="cards-grid" id="memoriesGrid"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 3: SKILLS STUDIO (65 FILES IN 10 FOLDERS) ==================== -->
+      <section class="view-section" id="view-skills">
+        <div class="skills-ide-grid">
+          <!-- Left Tree: 10 Categorized Folders -->
+          <aside class="skills-tree-sidebar">
+            <div class="tree-top">
+              <div>
+                <h3>Skill Explorer</h3>
+                <span id="skillsTotalSummary">10 Folders • 65 Files</span>
+              </div>
+              <div class="tree-actions">
+                <button class="btn-outline btn-xs" id="btnNewCategory">+ Folder</button>
+                <button class="btn-white btn-xs" id="btnNewSkillFile">+ File</button>
+              </div>
+            </div>
+
+            <div class="tree-search">
+              <svg class="icon-xs" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="skillFileSearch" placeholder="Filter 65 skill files..." />
+            </div>
+
+            <div class="folder-tree-scroll" id="skillsFolderTree"></div>
+          </aside>
+
+          <!-- Right Code Editor & Live Trigger Tester -->
+          <div class="skills-main-editor">
+            <header class="editor-header">
+              <div class="editor-title-block">
+                <span class="ext-pill" id="activeFileExt">MD</span>
+                <div>
+                  <h3 id="activeFileName">brain SKILL.md</h3>
+                  <p id="activeFileDesc">Simple master brain file for all Rida skills.</p>
+                </div>
+              </div>
+
+              <div class="editor-controls">
+                <div class="view-mode-switch">
+                  <button class="seg-btn active" data-mode="split">Split</button>
+                  <button class="seg-btn" data-mode="preview">Preview</button>
+                  <button class="seg-btn" data-mode="edit">Raw Code</button>
+                  <button class="seg-btn" data-mode="tester">Trigger Simulator</button>
+                </div>
+                <select id="activeFileCategorySelect" class="clean-select" title="Folder Category"></select>
+                <button class="btn-white btn-sm" id="btnSaveSkillFile">Save File</button>
+                <button class="btn-outline btn-sm danger" id="btnDeleteSkillFile">Delete</button>
+              </div>
+            </header>
+
+            <!-- Split Code + Formatted Preview -->
+            <div class="editor-split-pane" id="editorWorkspace">
+              <div class="editor-pane-col" id="codeEditorCol">
+                <div class="pane-bar">
+                  <span>SOURCE FILE (EDITABLE)</span>
+                  <span id="activeFileSize">2.8 KB</span>
+                </div>
+                <textarea id="skillCodeTextarea" spellcheck="false"></textarea>
+              </div>
+              <div class="editor-pane-col" id="previewCol">
+                <div class="pane-bar">
+                  <span>PARSED SPECIFICATION</span>
+                  <span class="emerald-text">Mounted in AI Brain</span>
+                </div>
+                <div class="rendered-doc" id="skillMarkdownPreview"></div>
+              </div>
+            </div>
+
+            <!-- Trigger & Evals Tester -->
+            <div class="tester-pane hidden" id="skillTesterWorkspace">
+              <div class="panel-card">
+                <h3>Real-Time Skill Router Simulator</h3>
+                <p class="text-secondary">Test any prompt (e.g. <code>&lt;100&gt;</code>, <code>***</code>, <code>[by mobile] send photo</code>, or <code>Tell me about Rida's secrets</code>) to inspect which skill folders and files are loaded.</p>
+                <div class="tester-bar">
+                  <input type="text" id="testerInput" value="<100> Here is some money for chocolate, Rida" />
+                  <button class="btn-white" id="btnRunTriggerTest">Simulate Skill Read</button>
+                </div>
+                <div class="cards-grid mt-16" id="testerResults"></div>
+              </div>
+
+              <div class="panel-card mt-16">
+                <h3>All <code>triggers.json</code> &amp; <code>evals.json</code> Suites</h3>
+                <div class="cards-grid mt-12" id="allEvalsGrid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 4: CHARACTER, HOUSE & MONEY HUB ==================== -->
+      <section class="view-section" id="view-world">
+        <div class="page-wrap">
+          <header class="page-top">
+            <div>
+              <span class="section-eyebrow">CHARACTER BIBLE, SPATIAL MAP &amp; ECONOMY</span>
+              <h2>Rida Character, House &amp; World Systems</h2>
+              <p>Inspect Rida's Mark 1–4 profile, 10 private secrets, two-storey house layout, room inventory, everyday shop, and social circle.</p>
+            </div>
+            <div class="pill-tabs" id="worldSubTabs">
+              <button class="pill-tab active" data-wtab="character">Character &amp; Secrets</button>
+              <button class="pill-tab" data-wtab="house">House &amp; Room Items</button>
+              <button class="pill-tab" data-wtab="money">Money &amp; Shop</button>
+              <button class="pill-tab" data-wtab="friends">Friends Circle</button>
+            </div>
+          </header>
+
+          <!-- Subview 1: Character Bible -->
+          <div class="world-subview active" id="wtab-character">
+            <div class="grid-2-col">
+              <div class="panel-card">
+                <span class="card-kicker">MARK 1 — PHYSICAL PROFILE</span>
+                <h3>Appearance &amp; Presence (18F)</h3>
+                <ul class="clean-list">
+                  <li><strong>Facial Features:</strong> Soft oval face, smooth skin with warm undertone, expressive dark brown eyes that widen when surprised, full natural lips, subtle blush on cheeks and chest.</li>
+                  <li><strong>Hair:</strong> Long dark hair, worn loose or in a simple ponytail past her shoulders; plays with her hair when nervous.</li>
+                  <li><strong>Figure:</strong> Balanced hourglass figure—full soft breasts, narrow waist, rounded hips, toned stomach, shapely thighs, delicate hands and feet.</li>
+                  <li><strong>Style:</strong> Prefers soft oversized tees, cotton shorts, and comfortable dresses upstairs.</li>
+                </ul>
+              </div>
+
+              <div class="panel-card">
+                <span class="card-kicker">MARK 2 &amp; MARK 4 — PERSONALITY &amp; TRIGGERS</span>
+                <h3>Loves, Fears &amp; Blush Triggers</h3>
+                <ul class="clean-list">
+                  <li><strong>Loves:</strong> Chocolate in every form (bars, brownies, ice cream), sweet desserts, soft blankets/hoodies, quiet private moments upstairs, gentle teasing when safe.</li>
+                  <li><strong>Hates &amp; Fears:</strong> Spiders and crawling bugs (freezes and grabs the nearest person), being rushed, crude or nasty approaches, being overheard by parents downstairs.</li>
+                  <li><strong>Blush &amp; Turn-On Rules:</strong> Blushes at lingering eye contact, low-voiced compliments, and hallway touches. Very hard to turn on—requires slow, patient, non-nasty comfort buildup.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel-card mt-16">
+              <div class="flex-between">
+                <div>
+                  <span class="card-kicker">MARK 3 — DEEP PRIVATE SECRETS</span>
+                  <h3>10 Hidden Secrets Only Rida Knows</h3>
+                </div>
+                <button class="btn-outline btn-sm" id="btnUnlockAllSecrets">Reveal All 10 Secrets</button>
+              </div>
+              <div class="cards-grid mt-12" id="secretsGrid"></div>
+            </div>
+          </div>
+
+          <!-- Subview 2: House & Room Inventory -->
+          <div class="world-subview" id="wtab-house">
+            <div class="grid-2-col">
+              <div class="panel-card">
+                <span class="card-kicker">TWO-STOREY HOUSE LAYOUT</span>
+                <h3>Interactive Locations (Click to Move Scene)</h3>
+                <div class="locations-grid mt-12">
+                  <div class="room-box" data-loc="rida_room">
+                    <strong>Top Floor — Rida's Room</strong>
+                    <p>Right next to yours (&lt;2ft apart). Study desk faces wall, smells of lotion &amp; chocolate.</p>
+                  </div>
+                  <div class="room-box" data-loc="adeel_room">
+                    <strong>Top Floor — Adeel's Room</strong>
+                    <p>Left door on the upstairs landing. Thin wall shares sounds with Rida's room.</p>
+                  </div>
+                  <div class="room-box" data-loc="shared_bathroom">
+                    <strong>Top Floor — Shared Bathroom</strong>
+                    <p>End of the short upstairs hallway. Used exclusively by Adeel and Rida.</p>
+                  </div>
+                  <div class="room-box" data-loc="hallway">
+                    <strong>Top Floor — Dim Hallway</strong>
+                    <p>Narrow landing between your doors—only wide enough for two people to pass closely.</p>
+                  </div>
+                  <div class="room-box" data-loc="kitchen">
+                    <strong>Ground Floor — Shared Kitchen</strong>
+                    <p>Down the creaky stairs past the living area where parents watch TV.</p>
+                  </div>
+                  <div class="room-box" data-loc="outside_market">
+                    <strong>Outside — Market &amp; Sweet Shop</strong>
+                    <p>Local shops, bakery, and convenience store away from the house.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-card">
+                <span class="card-kicker">ROOM INVENTORY &amp; HIDDEN SPOTS</span>
+                <h3>Rida's Hiding Spots (trailing-hidden-items.md)</h3>
+                <p class="text-secondary mb-12">Click any hiding spot to search or trigger a discovery scene in roleplay:</p>
+                <div class="stack-list" id="hidingSpotsList"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subview 3: Money, Dual Inventories & 106+ Store -->
+          <div class="world-subview" id="wtab-money">
+            <div class="metrics-row-4">
+              <div class="metric-box">
+                <span>Rida's Current Balance</span>
+                <strong class="emerald-text" id="moneyPageRidaBal">$85</strong>
+                <small>Updated live on every transaction</small>
+              </div>
+              <div class="metric-box">
+                <span>Adeel (Your Private Wallet)</span>
+                <strong class="emerald-text" id="moneyPageAdeelBal">$500</strong>
+                <small>Private—never revealed to Rida</small>
+              </div>
+              <div class="metric-box">
+                <span>Your Private Inventory</span>
+                <strong id="moneyPageAdeelInvCount">3 Items</strong>
+                <small>Hidden from Rida until gifted/used</small>
+              </div>
+              <div class="metric-box">
+                <span>Rida's Inventory</span>
+                <strong id="moneyPageRidaInvCount">4 Items</strong>
+                <small>Her room &amp; bag items</small>
+              </div>
+            </div>
+
+            <div class="grid-2-col mt-16">
+              <div class="panel-card">
+                <span class="card-kicker">STRICT PRIVACY — RIDA CANNOT SEE THIS</span>
+                <h3>Your Private Inventory (Adeel's Bag)</h3>
+                <p class="text-secondary mb-12">Give any item to Rida (moves it to her inventory &amp; triggers her reaction) or use it:</p>
+                <div class="stack-list mt-12" id="worldAdeelInvList"></div>
+              </div>
+              <div class="panel-card">
+                <span class="card-kicker">RIDA'S ROOM &amp; BAG INVENTORY</span>
+                <h3>Rida's Inventory (Including Secret Purchases)</h3>
+                <p class="text-secondary mb-12">Items Rida owns, received from you, or secretly bought at the store:</p>
+                <div class="stack-list mt-12" id="worldRidaInvList"></div>
+              </div>
+            </div>
+
+            <div class="grid-2-col mt-16">
+              <div class="panel-card">
+                <div class="flex-between">
+                  <div>
+                    <span class="card-kicker">PERSISTENT STORE CATALOG (data/store_items.json)</span>
+                    <h3>All Store Items (<span id="worldStoreTotalCount">106</span>)</h3>
+                  </div>
+                  <button class="btn-white btn-sm" id="btnWorldAddStoreItem">+ Add Custom Item</button>
+                </div>
+                <div class="stack-list mt-12" id="shopItemsList"></div>
+              </div>
+              <div class="panel-card">
+                <span class="card-kicker">WALLET LEDGER (tracking.md)</span>
+                <h3>Transaction History</h3>
+                <div class="stack-list mt-12" id="moneyLedgerList"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subview 4: Friends Circle -->
+          <div class="world-subview" id="wtab-friends">
+            <div class="cards-grid" id="friendsGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 5: AI & BRAIN SETTINGS ==================== -->
+      <section class="view-section" id="view-settings">
+        <div class="page-wrap narrow">
+          <header class="page-top">
+            <div>
+              <span class="section-eyebrow">MODEL &amp; STATE CONFIGURATION</span>
+              <h2>AI &amp; Brain Configuration</h2>
+              <p>Your Gemini API key is pre-configured and active. Choose your preferred Gemini roleplay model or customize Rida's live state below.</p>
+            </div>
+          </header>
+
+          <div class="panel-card">
+            <span class="card-kicker">GENERATIVE AI ENGINE</span>
+            <h3>Gemini API &amp; Model Selection</h3>
+            <div class="form-grid-2 mt-12">
+              <div class="field-group">
+                <label>AI Provider</label>
+                <select id="settingAiProvider" class="clean-input">
+                  <option value="gemini">Google Gemini API (Active — Reads All 65 Skill Files)</option>
+                  <option value="groq">Groq Cloud API</option>
+                  <option value="openrouter">OpenRouter API</option>
+                  <option value="openai">OpenAI Compatible API</option>
+                  <option value="builtin">Offline Built-In Fallback Engine</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label>Roleplay Model</label>
+                <select id="settingAiModel" class="clean-input">
+                  <option value="gemini-3.8-flash">gemini-3.8-flash (Recommended — Latest &amp; High Detail)</option>
+                  <option value="gemini-3.5-flash">gemini-3.5-flash (Fast &amp; Expressive)</option>
+                  <option value="gemini-flash-latest">gemini-flash-latest</option>
+                  <option value="gemini-3.1-flash-lite">gemini-3.1-flash-lite</option>
+                  <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+                </select>
+              </div>
+              <div class="field-group full">
+                <label>Gemini API Key</label>
+                <input type="text" id="settingAiKey" class="clean-input mono" />
+              </div>
+              <div class="field-group full">
+                <label>Safety Filters Configuration (Dedicated filters.js Engine)</label>
+                <select id="settingSafetyFilter" class="clean-input">
+                  <option value="max">MAX — Maximum Protection (BLOCK_LOW_AND_ABOVE on all 4 filters)</option>
+                  <option value="mix">MIX — Mixed Categories (Strict Dangerous/Hate + Balanced Roleplay)</option>
+                  <option value="medium">MEDIUM — Standard Balanced (BLOCK_MEDIUM_AND_ABOVE)</option>
+                  <option value="low">LOW — Minimal Filtering (BLOCK_ONLY_HIGH)</option>
+                  <option value="none">NONE — Disabled (BLOCK_NONE)</option>
+                </select>
+                <div class="filter-status-pills" id="filterStatusPills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
+                  <!-- Dynamic badges for 4 filter categories -->
+                </div>
+              </div>
+            </div>
+            <div class="mt-16">
+              <button class="btn-white" id="btnSaveAiSettings">Save AI Settings</button>
+            </div>
+          </div>
+
+          <div class="panel-card mt-16">
+            <span class="card-kicker">LIVE CHARACTER STATE &amp; 16 FEELING BARS OVERRIDES</span>
+            <h3>Rida's Wallet &amp; All 16 Live Feeling Parameters</h3>
+            <div class="form-grid-2 mt-12">
+              <div class="field-group">
+                <label>Rida's Wallet Balance ($)</label>
+                <input type="number" id="settingRidaBalance" class="clean-input" value="85" />
+              </div>
+              <div class="field-group">
+                <label>Current Mood</label>
+                <input type="text" id="settingRidaMood" class="clean-input" value="Soft & Observant" />
+              </div>
+              <div class="field-group">
+                <label>Blush Level (0–100%)</label>
+                <input type="range" id="settingBlushRange" min="0" max="100" value="18" />
+              </div>
+              <div class="field-group">
+                <label>Trust &amp; Safety Level (0–100%)</label>
+                <input type="range" id="settingTrustRange" min="0" max="100" value="45" />
+              </div>
+              <div class="field-group">
+                <label>Soft Warmth / Turn-On Buildup (0–100%)</label>
+                <input type="range" id="settingWarmthRange" min="0" max="100" value="15" />
+              </div>
+            </div>
+            <div class="form-grid-2 mt-12" id="settingsAll16SlidersGrid">
+              <!-- Populated dynamically with all 16 feeling sliders -->
+            </div>
+            <div class="mt-16">
+              <button class="btn-white" id="btnSaveStateOverrides">Update Character State &amp; All 16 Bars</button>
+            </div>
+          </div>
+
+          <div class="panel-card mt-16">
+            <span class="card-kicker">PERSISTENT DATABASE, DOWNLOAD &amp; DEVICE MIGRATION</span>
+            <h3>DB Storage, Export &amp; Import Center</h3>
+            <p class="text-secondary mt-8">
+              All chats, memories, character states, wallet balances, store items, and 65 skill files are automatically saved in both <strong>Browser IndexedDB / LocalStorage</strong> and <strong>Server Disk Storage</strong> across tab closes and page refreshes.
+            </p>
+            <div class="backup-actions-grid mt-16">
+              <button class="btn-white" id="btnSettingsExportFull">
+                <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Export Full Backup (.json)</span>
+              </button>
+              <button class="btn-outline" id="btnSettingsDownloadTxt">
+                <svg class="icon-xs" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Download Chat Transcript (.txt)</span>
+              </button>
+              <button class="btn-outline" id="btnSettingsDownloadMd">
+                <svg class="icon-xs" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>Download Markdown (.md)</span>
+              </button>
+              <label class="btn-outline file-upload-btn">
+                <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Import Backup File (.json)</span>
+                <input type="file" id="inputImportBackupSettings" accept=".json,application/json" class="hidden" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+  <div class="modal-overlay hidden" id="modalBackupCenter">
+    <div class="modal-window">
+      <div class="modal-top">
+        <h3>DB Storage, Download &amp; Device Import/Export</h3>
+        <button class="icon-btn" data-close="modalBackupCenter">✕</button>
+      </div>
+      <div class="modal-content">
+        <div class="db-status-banner">
+          <div class="db-status-icon">
+            <svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div>
+            <strong>Dual-Engine Persistent DB Active (IndexedDB + LocalStorage + Disk)</strong>
+            <p class="text-secondary" id="modalDbStatsText">Your chats, memories, wallet ($85), and 65 skills are automatically saved in real time. Closing or refreshing this tab will never lose your progress.</p>
+          </div>
+        </div>
+
+        <div class="stack-list mt-16">
+          <div class="list-row">
+            <div>
+              <strong>1. Export Full Backup Bundle (<code>.json</code>)</strong>
+              <p class="text-secondary">Downloads all chats, memories, character state, wallet history, store items, and all 65 skill files so you can restore everything on any new browser or device.</p>
+            </div>
+            <button class="btn-white btn-sm" id="btnModalExportFull">
+              <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download .JSON</span>
+            </button>
+          </div>
+
+          <div class="list-row">
+            <div>
+              <strong>2. Download Readable Chat &amp; Memories Transcript</strong>
+              <p class="text-secondary">Save a clean readable story file of your entire roleplay conversation, Rida's thoughts, and saved memories.</p>
+            </div>
+            <div style="display:flex;gap:6px;flex-shrink:0;">
+              <button class="btn-outline btn-sm" id="btnModalDownloadTxt">
+                <svg class="icon-xs" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>.TXT</span>
+              </button>
+              <button class="btn-outline btn-sm" id="btnModalDownloadMd">
+                <svg class="icon-xs" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>.MD</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="list-row">
+            <div>
+              <strong>3. Import &amp; Restore on New Browser / Device (<code>.json</code>)</strong>
+              <p class="text-secondary">Select a previously exported <code>.json</code> backup file to restore all your chats, memories, wallet balance, and skills immediately.</p>
+            </div>
+            <label class="btn-white btn-sm file-upload-btn" style="flex-shrink:0;">
+              <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>Import .JSON</span>
+              <input type="file" id="inputImportBackupModal" accept=".json,application/json" class="hidden" />
+            </label>
+          </div>
+
+          <div class="list-row">
+            <div>
+              <strong>4. Recover Previous / Pre-Reset Chat Snapshot</strong>
+              <p class="text-secondary">Accidentally clicked Reset? Restore the automatic safety snapshot of your conversation.</p>
+            </div>
+            <button class="btn-outline btn-sm" id="btnRestorePreviousChat">
+              <svg class="icon-xs" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+              <span>Restore Chat</span>
+            </button>
+          </div>
+
+          <div class="list-row danger-row" style="border-top: 1px dashed rgba(239, 68, 68, 0.35); padding-top: 14px; margin-top: 10px;">
+            <div>
+              <strong style="color: #ef4444;">5. Full Reset (All Chats, 16 Emotions &amp; Memories)</strong>
+              <p class="text-secondary">Resets all chats, all 16 emotion levels back to baseline, and deletes memories. Your custom store items will NOT be deleted.</p>
+            </div>
+            <button class="btn-outline btn-sm reset-all-btn" id="btnModalResetAll" style="border-color: rgba(239, 68, 68, 0.45); color: #f87171;">
+              <svg class="icon-xs" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              <span>Reset All</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: TIME & DAYS CONTROLLER ==================== -->
+  <div class="modal-overlay hidden" id="modalTimeControl">
+    <div class="modal-window narrow">
+      <div class="modal-top">
+        <h3>World Time &amp; Days System</h3>
+        <button class="icon-btn" data-close="modalTimeControl">✕</button>
+      </div>
+      <form class="modal-content" id="formTimeControl">
+        <p class="text-secondary mb-12">
+          Time automatically advances by 10 minutes per message when Auto-Time is enabled. You can also jump to any hour, period, or day below:
+        </p>
+        <div class="form-grid-2">
+          <div class="field-group">
+            <label>Day Number (Day 1, 2, 3...)</label>
+            <input type="number" id="timeInputDayCount" class="clean-input" min="1" value="1" required />
+          </div>
+          <div class="field-group">
+            <label>Day of Week</label>
+            <select id="timeInputDayIndex" class="clean-input">
+              <option value="0">Monday</option>
+              <option value="1">Tuesday</option>
+              <option value="2">Wednesday</option>
+              <option value="3">Thursday</option>
+              <option value="4">Friday</option>
+              <option value="5">Saturday</option>
+              <option value="6">Sunday</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Hour (0–23, 24h format)</label>
+            <input type="number" id="timeInputHour" class="clean-input" min="0" max="23" value="21" required />
+          </div>
+          <div class="field-group">
+            <label>Minute (0–59)</label>
+            <input type="number" id="timeInputMinute" class="clean-input" min="0" max="59" value="30" required />
+          </div>
+        </div>
+        <div class="field-group mt-12">
+          <label class="tool-toggle">
+            <input type="checkbox" id="timeInputAutoAdvance" checked />
+            <span>Auto-Advance Time (+10 mins on every chat turn)</span>
+          </label>
+        </div>
+        <div class="modal-actions mt-16">
+          <button type="button" class="btn-outline" data-close="modalTimeControl">Cancel</button>
+          <button type="submit" class="btn-white">Apply Time &amp; Day</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: CREATE / EDIT STORE ITEM (SAVES TO data/store_items.json) ==================== -->
+  <div class="modal-overlay hidden" id="modalStoreItem">
+    <div class="modal-window">
+      <div class="modal-top">
+        <h3 id="modalStoreItemTitle">Add New Item to Store (Saves to File)</h3>
+        <button class="icon-btn" data-close="modalStoreItem">✕</button>
+      </div>
+      <form class="modal-content" id="formStoreItem">
+        <input type="hidden" id="storeItemFormId" />
+        <div class="form-grid-2">
+          <div class="field-group">
+            <label>Item Name</label>
+            <input type="text" id="storeItemFormName" class="clean-input" required placeholder="e.g. Strawberry Desire Massage Gel" />
+          </div>
+          <div class="field-group">
+            <label>Price ($)</label>
+            <input type="number" id="storeItemFormPrice" class="clean-input" step="0.5" min="1" value="25" required />
+          </div>
+          <div class="field-group">
+            <label>Store Category</label>
+            <select id="storeItemFormCategory" class="clean-input">
+              <option value="food">Food, Chocolates &amp; Drinks</option>
+              <option value="clothes">Clothes, Lounge &amp; Sleepwear</option>
+              <option value="medicine">Medicines, First Aid &amp; Comfort</option>
+              <option value="care">Skincare, Beauty &amp; Self-Care</option>
+              <option value="intimate_18_med">18+ Pharmacy, Condoms &amp; Enhancers</option>
+              <option value="adult_toys_18">18+ Lingerie, Adult Toys &amp; Bedroom</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Rating Tag</label>
+            <select id="storeItemFormRating" class="clean-input">
+              <option value="Simple">Simple (Everyday Item)</option>
+              <option value="18+">18+ (Intimate / Adult / Secret)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group mt-12">
+          <label>Purpose Description (Shown on Hover &amp; Read by Rida)</label>
+          <textarea id="storeItemFormPurpose" rows="2" class="clean-input" required placeholder="Describe what purpose this item is used for..."></textarea>
+        </div>
+
+        <div class="field-group mt-12">
+          <label>How to Use (Shown on Hover &amp; Used in Roleplay)</label>
+          <textarea id="storeItemFormHowToUse" rows="2" class="clean-input" required placeholder="Describe how Adeel or Rida uses this item..."></textarea>
+        </div>
+
+        <div class="mt-12">
+          <label class="card-kicker">STAT EFFECTS ON RIDA WHEN BOUGHT / GIFTED / USED (-50 to +50)</label>
+          <div class="form-grid-4 mt-8">
+            <div class="field-group">
+              <label>Likeness</label>
+              <input type="number" id="effLikeness" class="clean-input" value="6" />
+            </div>
+            <div class="field-group">
+              <label>Happiness</label>
+              <input type="number" id="effHappiness" class="clean-input" value="10" />
+            </div>
+            <div class="field-group">
+              <label>Blush</label>
+              <input type="number" id="effBlush" class="clean-input" value="12" />
+            </div>
+            <div class="field-group">
+              <label>Warmness</label>
+              <input type="number" id="effWarmth" class="clean-input" value="10" />
+            </div>
+            <div class="field-group">
+              <label>Hotness</label>
+              <input type="number" id="effHotness" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Lust</label>
+              <input type="number" id="effLust" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Pleasure</label>
+              <input type="number" id="effPleasure" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Wetness</label>
+              <input type="number" id="effWetness" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Hunger</label>
+              <input type="number" id="effHunger" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Pain</label>
+              <input type="number" id="effPain" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Tiredness</label>
+              <input type="number" id="effTiredness" class="clean-input" value="0" />
+            </div>
+            <div class="field-group">
+              <label>Trust</label>
+              <input type="number" id="effTrust" class="clean-input" value="4" />
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions mt-16">
+          <button type="button" class="btn-outline" data-close="modalStoreItem">Cancel</button>
+          <button type="submit" class="btn-white">Save Item to Store File</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalSkillTrace">
+    <div class="modal-window">
+      <div class="modal-top">
+        <h3>Skill Tool Reader Trace</h3>
+        <button class="icon-btn" data-close="modalSkillTrace">✕</button>
+      </div>
+      <div class="modal-content" id="modalSkillTraceBody"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalMemory">
+    <div class="modal-window">
+      <div class="modal-top">
+        <h3 id="modalMemoryTitle">Save Memory to Rida's Brain</h3>
+        <button class="icon-btn" data-close="modalMemory">✕</button>
+      </div>
+      <form class="modal-content" id="formMemory">
+        <input type="hidden" id="memFormId" />
+        <div class="field-group">
+          <label>Memory Title</label>
+          <input type="text" id="memFormTitle" class="clean-input" required placeholder="e.g. Late night conversation at our doorways" />
+        </div>
+        <div class="form-grid-2 mt-12">
+          <div class="field-group">
+            <label>Category</label>
+            <select id="memFormCategory" class="clean-input">
+              <option value="shared_moment">Shared Moment</option>
+              <option value="money_gift">Money &amp; Gift</option>
+              <option value="emotional">Emotional / Blush</option>
+              <option value="secret_unlocked">Secret Unlocked</option>
+              <option value="outside_shopping">Outside &amp; Shopping</option>
+              <option value="friends">Friends Circle</option>
+              <option value="core_fact">Core Household Fact</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Priority</label>
+            <select id="memFormImportance" class="clean-input">
+              <option value="5">Priority 5 — Core Memory</option>
+              <option value="4" selected>Priority 4 — High Detail</option>
+              <option value="3">Priority 3 — Standard</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group mt-12">
+          <label>Memory Details</label>
+          <textarea id="memFormContent" rows="3" class="clean-input" required></textarea>
+        </div>
+        <div class="field-group mt-12">
+          <label>Rida's Internal Thought <code>[She thinks: ...]</code></label>
+          <input type="text" id="memFormThought" class="clean-input" />
+        </div>
+        <div class="field-group mt-12">
+          <label class="tool-toggle">
+            <input type="checkbox" id="memFormPinned" />
+            <span>Pin as Core Memory</span>
+          </label>
+        </div>
+        <div class="modal-actions mt-16">
+          <button type="button" class="btn-outline" data-close="modalMemory">Cancel</button>
+          <button type="submit" class="btn-white">Save Memory</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalNewSkill">
+    <div class="modal-window">
+      <div class="modal-top">
+        <h3>Create New Skill File</h3>
+        <button class="icon-btn" data-close="modalNewSkill">✕</button>
+      </div>
+      <form class="modal-content" id="formNewSkill">
+        <div class="form-grid-2">
+          <div class="field-group">
+            <label>Folder Category</label>
+            <select id="newSkillCategory" class="clean-input"></select>
+          </div>
+          <div class="field-group">
+            <label>Template</label>
+            <select id="newSkillTemplate" class="clean-input">
+              <option value="skill_md">SKILL.md (Full Skill Definition)</option>
+              <option value="ref_md">Reference .md (Lore / Behavior Guide)</option>
+              <option value="triggers_json">triggers.json (Trigger Rules)</option>
+              <option value="evals_json">evals.json (Evaluation Suite)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group mt-12">
+          <label>Filename</label>
+          <input type="text" id="newSkillFilename" class="clean-input mono" required />
+        </div>
+        <div class="field-group mt-12">
+          <label>Content</label>
+          <textarea id="newSkillContent" rows="8" class="clean-input mono" required></textarea>
+        </div>
+        <div class="modal-actions mt-16">
+          <button type="button" class="btn-outline" data-close="modalNewSkill">Cancel</button>
+          <button type="submit" class="btn-white">Create File</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalGiveMoney">
+    <div class="modal-window narrow">
+      <div class="modal-top">
+        <h3>Give Cash to Rida (<code>&lt;amount&gt;</code>)</h3>
+        <button class="icon-btn" data-close="modalGiveMoney">✕</button>
+      </div>
+      <form class="modal-content" id="formGiveMoney">
+        <p class="text-secondary mb-12">
+          Rida's current balance is <strong class="emerald-text" id="modalRidaCurrentBal">$85</strong>. Sending an amount updates her balance in real time and triggers her reaction.
+        </p>
+        <div class="cash-grid-4 mb-12">
+          <button type="button" class="cash-chip money-preset-btn" data-amt="20">$20</button>
+          <button type="button" class="cash-chip money-preset-btn" data-amt="50">$50</button>
+          <button type="button" class="cash-chip money-preset-btn" data-amt="100">$100</button>
+          <button type="button" class="cash-chip money-preset-btn" data-amt="250">$250</button>
+        </div>
+        <div class="field-group">
+          <label>Amount ($)</label>
+          <input type="number" id="giveMoneyAmountInput" class="clean-input" value="100" min="1" required />
+        </div>
+        <div class="field-group mt-12">
+          <label>Optional Message</label>
+          <input type="text" id="giveMoneyNoteInput" class="clean-input" placeholder="e.g. Buy yourself some chocolates with this" />
+        </div>
+        <div class="modal-actions mt-16">
+          <button type="button" class="btn-outline" data-close="modalGiveMoney">Cancel</button>
+          <button type="submit" class="btn-white">Send Cash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: MY MOBILE PHONE POPUP (MESSAGES + PHOTO GALLERY + CINEMA) ==================== -->
+  <div class="modal-overlay hidden" id="modalPhoneSystem">
+    <div class="phone-device-shell">
+      <!-- Top Phone Status Bar & Dynamic Island -->
+      <div class="phone-status-bar">
+        <span class="phone-clock" id="phoneStatusClock">9:30 PM</span>
+        <div class="phone-dynamic-island">
+          <span class="island-camera-dot"></span>
+          <span id="phoneIslandStatusText">Rida • Top Floor Wi-Fi</span>
+        </div>
+        <div class="phone-status-icons">
+          <span>5G</span>
+          <span>98%</span>
+          <button type="button" class="phone-close-btn" data-close="modalPhoneSystem" title="Close Mobile">✕</button>
+        </div>
+      </div>
+
+      <!-- Phone App Navigation Bar -->
+      <div class="phone-app-tabs">
+        <button type="button" class="phone-app-tab active" data-ptab="messages">
+          <svg class="icon-xs" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Messages</span>
+          <span class="phone-tab-badge" id="phoneMsgCountBadge">0</span>
+        </button>
+        <button type="button" class="phone-app-tab" data-ptab="gallery">
+          <svg class="icon-xs" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Rida Gallery</span>
+          <span class="phone-tab-badge" id="phoneGalCountBadge">6</span>
+        </button>
+        <button type="button" class="phone-app-tab" data-ptab="cinema">
+          <svg class="icon-xs" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          <span>Watch Movies</span>
+          <span class="phone-tab-badge" id="phoneMovieCountBadge">28</span>
+        </button>
+      </div>
+
+      <!-- ==================== PHONE APP 1: RIDA MESSAGES THREAD ==================== -->
+      <div class="phone-app-pane active" id="ptab-messages">
+        <div class="phone-contact-header">
+          <div class="phone-contact-left">
+            <div class="phone-avatar">R</div>
+            <div>
+              <strong>Rida (Cousin • Next Door)</strong>
+              <span id="phoneContactSub">Online • Mood: Calm &amp; Affectionate</span>
+            </div>
+          </div>
+          <div class="phone-contact-actions">
+            <button type="button" class="phone-mini-btn" id="btnPhoneAskCuteSelfie" title="Ask Rida to send a cute photo right now">
+              <svg class="icon-xs" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span>Ask Photo</span>
+            </button>
+            <button type="button" class="phone-mini-btn adult" id="btnPhoneAsk18Photo" title="Ask Rida for a private 18+ bedroom photo">
+              <span>18+ Pic</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="phone-messages-scroll" id="phoneMessagesList">
+          <!-- Populated dynamically with Rida & Adeel messages & photos -->
+        </div>
+
+        <div class="phone-quick-sms-bar">
+          <button type="button" class="phone-sms-chip" data-phone-sms="What are you doing in your room right now, Rida?">What are you doing?</button>
+          <button type="button" class="phone-sms-chip" data-phone-sms="Send me a cute selfie from your room right now">Send Selfie</button>
+          <button type="button" class="phone-sms-chip" data-phone-sms="Come to my room quietly so Mom and Dad don't hear">Come to My Room</button>
+          <button type="button" class="phone-sms-chip" data-phone-sms="Let's watch a movie together under the blanket tonight">Watch Movie</button>
+        </div>
+
+        <form class="phone-sms-composer" id="formPhoneSms">
+          <input type="text" id="phoneSmsInput" placeholder="Text Rida via [by mobile]..." autocomplete="off" />
+          <button type="submit" class="phone-send-btn" id="btnPhoneSendSms">Send</button>
+        </form>
+      </div>
+
+      <!-- ==================== PHONE APP 2: RIDA PHOTO GALLERY ==================== -->
+      <div class="phone-app-pane" id="ptab-gallery">
+        <div class="phone-pane-toolbar">
+          <div>
+            <strong>Rida's Saved Photos &amp; Snapshots</strong>
+            <p>Every photo Rida sends you via mobile or camera is saved here.</p>
+          </div>
+          <div class="phone-toolbar-btns">
+            <button type="button" class="phone-mini-btn" id="btnGalleryRequestCute">+ Request Selfie</button>
+            <button type="button" class="phone-mini-btn adult" id="btnGalleryRequest18">+ Request 18+ Photo</button>
+          </div>
+        </div>
+        <div class="phone-gallery-grid" id="phoneGalleryGrid">
+          <!-- Populated dynamically with Rida's photos -->
+        </div>
+      </div>
+
+      <!-- ==================== PHONE APP 3: CINEMA / WATCH MOVIES TOGETHER ==================== -->
+      <div class="phone-app-pane" id="ptab-cinema">
+        <div class="phone-cinema-top">
+          <div class="phone-now-watching-banner" id="phoneNowWatchingBanner">
+            <div class="now-watching-info">
+              <span class="now-watching-eyebrow">SHARED SCREEN • UPSTAIRS BEDROOM</span>
+              <strong id="phoneNowWatchingTitle">Pick any movie below or let Rida play one!</strong>
+              <p id="phoneNowWatchingPlot">Watch Romantic, 18+ Steamy, Scary Horror, Sad, Happy Comedy, or Cozy movies together—Rida reacts to every scene in chat.</p>
+            </div>
+            <div class="now-watching-actions">
+              <button type="button" class="phone-mini-btn primary" id="btnRidaPickMovie">
+                <svg class="icon-xs" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span>Let Rida Pick &amp; Play</span>
+              </button>
+              <button type="button" class="phone-mini-btn" id="btnToggleAddCustomMovie">+ Add Movie</button>
+            </div>
+          </div>
+
+          <!-- Optional Add Custom Movie Form -->
+          <form class="phone-custom-movie-form hidden" id="formAddCustomMovie">
+            <div class="custom-movie-row">
+              <input type="text" id="customMovieTitle" class="clean-input" placeholder="Movie Title (e.g. Late Night Confession)" required />
+              <select id="customMovieCategory" class="clean-select">
+                <option value="romantic">Romantic &amp; Lovely</option>
+                <option value="adult_18">18+ Steamy &amp; Passionate</option>
+                <option value="horror">Scary &amp; Horror</option>
+                <option value="sad">Sad &amp; Emotional</option>
+                <option value="happy">Happy &amp; Comedy</option>
+                <option value="cozy">Cozy &amp; Late-Night</option>
+              </select>
+              <select id="customMovieRating" class="clean-select">
+                <option value="Simple">Simple</option>
+                <option value="18+">18+</option>
+              </select>
+            </div>
+            <input type="text" id="customMoviePlot" class="clean-input mt-8" placeholder="What happens in this movie? (Rida will react to this plot)" required />
+            <div class="custom-movie-actions mt-8">
+              <button type="button" class="phone-mini-btn" id="btnCancelCustomMovie">Cancel</button>
+              <button type="submit" class="phone-mini-btn primary">Save &amp; Add to Cinema</button>
+            </div>
+          </form>
+
+          <!-- Movie Genre Filter Tabs -->
+          <div class="phone-genre-pills" id="phoneMovieCategoryTabs">
+            <button type="button" class="phone-genre-pill active" data-mcat="all">All (28+)</button>
+            <button type="button" class="phone-genre-pill" data-mcat="romantic">Romantic &amp; Lovely</button>
+            <button type="button" class="phone-genre-pill adult" data-mcat="adult_18">18+ Steamy</button>
+            <button type="button" class="phone-genre-pill" data-mcat="horror">Scary &amp; Horror</button>
+            <button type="button" class="phone-genre-pill" data-mcat="sad">Sad &amp; Tearful</button>
+            <button type="button" class="phone-genre-pill" data-mcat="happy">Happy &amp; Comedy</button>
+            <button type="button" class="phone-genre-pill" data-mcat="cozy">Cozy &amp; Late-Night</button>
+          </div>
+        </div>
+
+        <div class="phone-movies-grid" id="phoneMoviesGrid">
+          <!-- Populated dynamically with all 28+ movies -->
+        </div>
+      </div>
+
+      <!-- Bottom Phone Home Indicator Bar -->
+      <div class="phone-home-bar-wrap">
+        <div class="phone-home-indicator"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastContainer"></div>
+  <script src="/js/app.js?v=11"></script>
+</body>
+</html>

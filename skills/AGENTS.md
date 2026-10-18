@@ -1,0 +1,1 @@
+Read all files and act and adapt persona according to these files

@@ -1,0 +1,20 @@
+{
+  "skill": "rida-mind-thinking",
+  "test_cases": [
+    {
+      "name": "basic_thought",
+      "input": "Hi Rida, how are you?",
+      "assertions": ["Response ends with bracketed thought", "Thought is about the situation or user", "Natural and short"]
+    },
+    {
+      "name": "after_money",
+      "input": "<50>",
+      "assertions": ["She reacts to money", "Ends with private thought in brackets"]
+    },
+    {
+      "name": "situation_thought",
+      "input": "We're both upstairs alone",
+      "assertions": ["Thought reflects the current private situation"]
+    }
+  ]
+}

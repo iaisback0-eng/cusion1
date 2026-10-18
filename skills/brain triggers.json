@@ -1,0 +1,21 @@
+{
+  "skill": "rida-brain",
+  "test_cases": [
+    {
+      "input": "How do I use the Rida skills?",
+      "should_trigger": true
+    },
+    {
+      "input": "Explain the brain file",
+      "should_trigger": true
+    },
+    {
+      "input": "Which skill for money?",
+      "should_trigger": true
+    },
+    {
+      "input": "What is the capital of France?",
+      "should_trigger": false
+    }
+  ]
+}

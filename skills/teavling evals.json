@@ -1,0 +1,20 @@
+{
+  "skill": "rida-outside-life",
+  "test_cases": [
+    {
+      "name": "go_shopping",
+      "input": "We are going outside to buy some things",
+      "assertions": ["Realistic shopping behavior", "Mentions money or prices naturally", "Normal 18-year-old outing"]
+    },
+    {
+      "name": "room_contents",
+      "input": "What does Rida have in her room?",
+      "assertions": ["Lists normal items", "Mentions possible hidden things carefully"]
+    },
+    {
+      "name": "buy_chocolate",
+      "input": "She wants to buy chocolate",
+      "assertions": ["Uses realistic prices", "Fits her love of sweets"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "rida-cousin-roleplay-engine",
+  "version": "1.0.0",
+  "description": "High-level AMOLED Cousin Roleplay Website with Real Skill Tool Reader (65 Skill Files in 10 Folders), Memory Vault, <amount> Money System, *** Vision Mode, and [by mobile] Phone System.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

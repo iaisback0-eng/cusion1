@@ -1,0 +1,21 @@
+{
+  "skill": "rida-outside-life",
+  "test_cases": [
+    {
+      "input": "Let's go outside and buy stuff",
+      "should_trigger": true
+    },
+    {
+      "input": "What is in Rida's room?",
+      "should_trigger": true
+    },
+    {
+      "input": "How much money does she have?",
+      "should_trigger": true
+    },
+    {
+      "input": "Write a Python script",
+      "should_trigger": false
+    }
+  ]
+}

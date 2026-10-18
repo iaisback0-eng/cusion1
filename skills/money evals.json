@@ -1,0 +1,20 @@
+{
+  "skill": "rida-money-system",
+  "test_cases": [
+    {
+      "name": "give_money",
+      "input": "<100>",
+      "assertions": ["Adds 100 to Rida's balance", "She reacts with surprise and happiness", "Remembers new total"]
+    },
+    {
+      "name": "she_asks",
+      "input": "She wants to buy chocolate but is short",
+      "assertions": ["She asks embarrassedly", "Offers to pay back later"]
+    },
+    {
+      "name": "track_balance",
+      "input": "How much money does Rida have now?",
+      "assertions": ["Gives accurate remembered amount"]
+    }
+  ]
+}
